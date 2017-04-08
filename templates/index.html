@@ -109,8 +109,8 @@
                                     <span>Card</span>
                                     <div id="card-element" class="field"></div>
                                 </label>
-                                <br>
-                                <button type="submit" class="btn btn-default float-right">Pay $12.00</button>
+                                <br><br><br><br><br><br><br><br><br><br><br>
+                                <button type="submit" class="btn btn-default float-right">Submit</button>
                                 <div class="outcome">
                                     <div class="error"></div>
                                     <div class="success">
@@ -133,7 +133,7 @@
                                 <label>
                                     <span>Delivery Date</span>
                                     <select name="delivery" class="field">
-                                        <option value="4-8">Saturday 4/8 & Saturday 4/22</option>
+                                        <option value="4-8,22">Saturday 4/8 & Saturday 4/22</option>
                                     </select>
                                 </label>
                                 <label>
@@ -149,8 +149,8 @@
                                     <span>Card</span>
                                     <div id="card-element2" class="field"></div>
                                 </label>
-                                <br>
-                                <button type="submit" class="btn btn-default float-right">Pay $20.00</button>
+                                <br><br><br><br><br><br><br><br><br><br><br>
+                                <button type="submit" class="btn btn-default float-right">Submit</button>
                                 <div class="outcome">
                                     <div class="error"></div>
                                     <div class="success">
@@ -241,7 +241,7 @@
                     <p>Are there refunds?</p>
                     <p class="text-muted">Refunds will be processed on a case by case basis. Email us at contact@eevm.org for more details.</p>
                     <p>What if I want different snacks?</p>
-                    <p class="text-muted">We only offer our hand-picked selection at this time. But shoot us your suggestions here for future Munchies boxes.</p>
+                    <p class="text-muted">We only offer our hand-picked selection at this time. But shoot us your suggestions at contact@eevm.org for future Munchies boxes.</p>
                     <p>Will this continue next year?</p>
                     <p class="text-muted">Absolutely! We hope to offer Munchies boxes year round. Make sure to tell your friends about Munchies so we can do this!</p>
                 </div>
@@ -255,7 +255,7 @@
                 <h2 style="font-size:60px">Stop waiting.<br>Start munching.</h2>
                 <h3 style="color:white">Packaged & delivered to your door.<br>Pick your dates: 4/8 & 4/22.</h3>
                 <a href="#payment-form" rel="modal:open"><img src="{{ url_for('static',filename='img/price-onebox.png') }}" style="max-width:40%" class="buybutton" href="#payment-form" alt=""></a><br><br>
-                <a href="#payment-form" rel="modal:open"><img src="{{ url_for('static',filename='img/price-twobox.png') }}" class="buybutton" style="max-width:40%" alt=""></a>
+                <a href="#payment-form2" rel="modal:open"><img src="{{ url_for('static',filename='img/price-twobox.png') }}" class="buybutton" style="max-width:40%" alt=""></a>
             </div>
         </div>
         <div class="overlay"></div>
@@ -319,7 +319,7 @@
 
      <script type="text/javascript">
 // import Stripe from 'stripe';
-var stripe = Stripe('pk_test_l9n25L22HiLqp7N69BB2XC0t');
+var stripe = Stripe('pk_live_l36eXajZNkhE5mMWKuvRqcn0');
 var elements = stripe.elements();
 
 var card = elements.create('card', {
