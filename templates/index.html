@@ -45,42 +45,24 @@
                         <div class="header-content-inner">
                             Powered by <img src="{{ url_for('static',filename='img/eevm.png') }}" style="max-width:25%" alt="">
                             <img src="{{ url_for('static',filename='img/munchies_logo2.png') }}" style="max-width:80%" alt="">
-                            <h1>Tackle finals in bites.</h1>
-                            <h3>Packaged & delivered to your door.<br>Pick your dates: 4/8 & 4/22.</h3>
-                            <a href="#payment-form" rel="modal:open" id="payment-button1"><img src="{{ url_for('static',filename='img/price-onebox.png') }}" style="max-width:80%" class="buybutton" href="#payment-form" alt=""></a><br><br>
-                            <a href="#payment-form2" rel="modal:open" id="payment-button2"><img src="{{ url_for('static',filename='img/price-twobox.png') }}" class="buybutton" style="max-width:80%" alt=""></a>
+                            <h1>Fuck Finals. Get Munchies.</h1>
+                            <h3>Box of snacks packaged & delivered to your door on 4/8.</h3>
+                            <a href="#payment-form" rel="modal:open" id="payment-button1">
+                                <button type="button" class="btn btn-default btn-lg btn-block">Get 1 Munchies Comfort Box - $15</button>
+                                <!-- <img src="{{ url_for('static',filename='img/price-onebox.png') }}" style="max-width:80%" class="buybutton" href="#payment-form" alt=""> -->
+                            </a><br>
+                            <!-- <a href="#payment-form2" rel="modal:open" id="payment-button2">
+                                <button type="button" class="btn btn-default btn-lg btn-block">Get 2 Munchies Comfort Boxes - $20</button>
+                            </a><br> -->
+                            <a href="#payment-form2" rel="modal:open" id="payment-button3">
+                                <button type="button" class="btn btn-default btn-lg btn-block">Get 1 Munchies Healthy Box - $15</button>
+                            </a>
 
                             
-                            <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                <input type="hidden" name="cmd" value="_s-xclick">
-                                <input type="hidden" name="hosted_button_id" value="T8XXKZEDZ63Q4">
-                                <input type="hidden" name="cn" value="Provide your address or dormroom:">
-                                <input type="submit" value="Only $12 per box" name="submit" title="PayPal - The safer, easier way to pay online!" class="btn btn-outline btn-xl">
-
-                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form>
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                <input type="hidden" name="cmd" value="_s-xclick">
-                                <input type="hidden" name="hosted_button_id" value="RUWD9HGJ68KAU">
-                                <input type="submit" value="Only $20 for two" name="submit" title="PayPal - The safer, easier way to pay online!" class="btn btn-default btn-xl">
-                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form> -->
-
-
-                            <!-- <a class="btn btn-outline btn-xl" href="#payment-form" rel="modal:open">Get 1 Munchies Box!</a>
-                            <a class="btn btn-default btn-xl" href="#payment-form" rel="modal:open">Get 2 Munchies Boxes!</a> -->
-
-
-                            <!-- <button type="button" class="btn btn-outline btn-xl" data-toggle="modal" data-target="#myModal">
-                                  Get 1 Munchies Box!
-                            </button>
-                            <button type="button" class="btn btn-default btn-xl" data-toggle="modal" data-target="#myModal">
-                                  Get 2 Munchies Boxes!
-                            </button> -->
 
                             <form action="/chargebox" method="post" id="payment-form" style="display:none">
 
-                                <h2>1 Munchies Box</h2><hr>
+                                <h2>1 Munchies Comfort Box</h2><hr>
                                 <label>
                                     <span>Email</span>
                                     <input name="email" class="field" placeholder="hi@eevm.org" type="email" />
@@ -92,7 +74,6 @@
                                 <label>
                                     <span>Delivery Date</span>
                                     <select name="delivery" class="field">
-                                        <option value="4-8">Saturday 4/8</option>
                                         <option value="4-22">Saturday 4/22</option>
                                     </select>
                                 </label>
@@ -121,7 +102,46 @@
 
                               <form action="/chargeboxes" method="post" id="payment-form2" style="display:none">
 
-                                <h2>2 Munchies Boxes</h2><hr>
+                                <h2>1 Munchies Healthy Box</h2><hr>
+                                <label>
+                                    <span>Email</span>
+                                    <input name="email" class="field" placeholder="hi@eevm.org" type="email" />
+                                </label>
+                                <label>
+                                    <span>Dormroom</span>
+                                    <input name="dormroom" class="field" placeholder="120 Dobbs" type="text"/>
+                                </label>
+                                <label>
+                                    <span>Delivery Date</span>
+                                    <select name="delivery" class="field">
+                                        <option value="4-22">Saturday 4/22</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    <span>Name on Card</span>
+                                    <input name="cardholder-name" class="field" placeholder="Jane Doe" type="text"/>
+                                </label>
+                                <label>
+                                    <span>Card ZIP code</span>
+                                    <input name="address-zip" class="field" placeholder="94110" />
+                                </label>
+                                <br>
+                                <label>
+                                    <span>Card</span>
+                                    <div id="card-element2" class="field"></div>
+                                </label>
+                                <br><br><br><br><br><br><br><br><br><br><br>
+                                <button type="submit" class="btn btn-default float-right">Submit</button>
+                                <div class="outcome">
+                                    <div class="error"></div>
+                                    <div class="success">
+                                      Success! Your Stripe token is <span class="token"></span>
+                                  </div>
+                                </div>
+
+                                <!-- <form action="/chargebox2" method="post" id="payment-form2" style="display:none">
+
+                                <h2>1 Munchies Healthy Box</h2><hr>
                                 <label>
                                     <span>Email</span>
                                     <input name="email" class="field" placeholder="hi@eevm.org" type="email" />
@@ -147,7 +167,7 @@
                                 <br>
                                 <label>
                                     <span>Card</span>
-                                    <div id="card-element2" class="field"></div>
+                                    <div id="card-element3" class="field"></div>
                                 </label>
                                 <br><br><br><br><br><br><br><br><br><br><br>
                                 <button type="submit" class="btn btn-default float-right">Submit</button>
@@ -156,7 +176,7 @@
                                     <div class="success">
                                       Success! Your Stripe token is <span class="token"></span>
                                   </div>
-                                </div>
+                                </div> -->
                           
                              <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                       data-key="{{ key }}"
